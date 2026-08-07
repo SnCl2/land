@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurelian Estates - Premium Land Investment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#dce2f7",
+                      "primary": "#003527",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "on-error": "#ffffff",
+                      "outline": "#707974",
+                      "on-secondary-fixed": "#241a00",
+                      "secondary-container": "#fed65b",
+                      "surface-tint": "#2b6954",
+                      "primary-fixed": "#b0f0d6",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-primary-fixed-variant": "#0b513d",
+                      "secondary-fixed-dim": "#e9c349",
+                      "surface-dim": "#d3daef",
+                      "surface-container-low": "#f1f3ff",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#80bea6",
+                      "on-error-container": "#93000a",
+                      "background": "#f9f9ff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#745c00",
+                      "surface-container": "#e9edff",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-tertiary-container": "#b0b2b3",
+                      "on-surface-variant": "#404944",
+                      "on-surface": "#141b2b",
+                      "surface-bright": "#f9f9ff",
+                      "tertiary": "#2c2f30",
+                      "primary-container": "#064e3b",
+                      "on-tertiary-fixed": "#191c1d",
+                      "primary-fixed-dim": "#95d3ba",
+                      "tertiary-container": "#424546",
+                      "surface": "#f9f9ff",
+                      "on-primary-fixed": "#002117",
+                      "surface-variant": "#dce2f7",
+                      "tertiary-fixed": "#e1e3e4",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#735c00",
+                      "inverse-surface": "#293040",
+                      "surface-container-high": "#e1e8fd",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "on-background": "#141b2b",
+                      "secondary-fixed": "#ffe088",
+                      "inverse-primary": "#95d3ba",
+                      "outline-variant": "#bfc9c3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "32px",
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "section-padding": "120px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(6, 78, 59, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #003527, #735c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        /* Entrance Animations */
+        @keyframes slideDownHeader {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInMobileBar {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInDesktopBar {
+            from {
+                transform: translate(50px, -50%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(0, -50%);
+                opacity: 1;
+            }
+        }
+        .animate-header {
+            animation: slideDownHeader 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .animate-mobile-bar {
+            animation: slideInMobileBar 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+        .animate-desktop-bar {
+            animation: slideInDesktopBar 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-md border-b border-white/20 shadow-[0_20px_40px_rgba(6,78,59,0.05)] animate-header" id="main-nav">
+<div class="max-w-container-max mx-auto px-4 md:px-gutter flex justify-between items-center h-20">
+<a class="font-headline-md text-2xl md:text-headline-md font-bold text-primary tracking-tight" href="#">LUXE LAND</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#investment">Investment Overview</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#site-plan">Site Plan</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#connectivity">Connectivity</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<a href="tel:+916290353970" class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 md:px-6 md:py-3 rounded hover:bg-primary-container transition-colors scale-95 hover:scale-100 duration-200 shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-lg md:text-xl" style="font-variation-settings: 'FILL' 1;">phone</span>
+<span class="hidden sm:inline">CALL NOW</span>
+</a>
+<button aria-label="Menu" onclick="toggleMobileDrawer(true)" class="md:hidden flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobile-drawer" class="fixed inset-0 z-[100] translate-x-full transition-transform duration-300 ease-in-out">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="toggleMobileDrawer(false)"></div>
+    <!-- Drawer Content -->
+    <div class="absolute top-0 right-0 w-80 h-full bg-white/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-2xl p-6 flex flex-col justify-between border-l border-outline-variant">
+        <div>
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-headline-md text-2xl font-bold text-primary tracking-tight">LUXE LAND</span>
+                <button onclick="toggleMobileDrawer(false)" class="p-2 rounded-full hover:bg-surface-variant transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-surface">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="font-headline-md text-xl text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/30" href="#investment" onclick="toggleMobileDrawer(false)">Investment Overview</a>
+                <a class="font-headline-md text-xl text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/30" href="#site-plan" onclick="toggleMobileDrawer(false)">Site Plan</a>
+                <a class="font-headline-md text-xl text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/30" href="#connectivity" onclick="toggleMobileDrawer(false)">Connectivity</a>
+                <a class="font-headline-md text-xl text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/30" href="#contact" onclick="toggleMobileDrawer(false)">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Drawer Footer -->
+        <div class="space-y-6">
+            <button onclick="toggleMobileDrawer(false); document.getElementById('popup-form').classList.remove('hidden')" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps py-4 rounded hover:bg-secondary-fixed transition-colors font-bold shadow-lg text-center">
+                REQUEST BROCHURE
+            </button>
+            
+            <div class="flex justify-center gap-4 text-on-surface-variant">
+                <a href="https://wa.me/916290353970" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Floating Actions -->
+<div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-4 animate-desktop-bar">
+<a class="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-white border border-outline-variant group relative" href="https://wa.me/916290353970" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-whatsapp text-2xl group-hover:text-white transition-colors"></i>
+<span class="absolute right-14 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">WhatsApp</span>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-[#1877F2] border border-outline-variant group relative" href="#">
+<i class="fa-brands fa-facebook-f text-lg"></i>
+<span class="absolute right-12 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Facebook</span>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-[#E4405F] border border-outline-variant group relative" href="#">
+<i class="fa-brands fa-instagram text-lg"></i>
+<span class="absolute right-12 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Instagram</span>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-black border border-outline-variant group relative" href="#">
+<i class="fa-brands fa-x-twitter text-lg"></i>
+<span class="absolute right-12 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">X (Twitter)</span>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-[#0A66C2] border border-outline-variant group relative" href="#">
+<i class="fa-brands fa-linkedin-in text-lg"></i>
+<span class="absolute right-12 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">LinkedIn</span>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-[#FF0000] border border-outline-variant group relative" href="#">
+<i class="fa-brands fa-youtube text-lg"></i>
+<span class="absolute right-12 bg-surface-container-highest px-3 py-1 rounded text-label-caps font-label-caps text-on-surface opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">YouTube</span>
+</a>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<div class="fixed bottom-8 right-4 z-50 flex flex-col space-y-3 md:hidden border border-white/20 shadow-[0_20px_40px_rgba(6,78,59,0.1)] bg-white/80 dark:bg-surface-container-highest/80 backdrop-blur-xl rounded-full p-2 animate-mobile-bar">
+<a class="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-white border border-outline-variant" href="https://wa.me/916290353970" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-whatsapp text-xl"></i>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-[#1877F2] border border-outline-variant" href="#">
+<i class="fa-brands fa-facebook-f text-base"></i>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-[#E4405F] border border-outline-variant" href="#">
+<i class="fa-brands fa-instagram text-base"></i>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-black border border-outline-variant" href="#">
+<i class="fa-brands fa-x-twitter text-base"></i>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-[#0A66C2] border border-outline-variant" href="#">
+<i class="fa-brands fa-linkedin-in text-base"></i>
+</a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform text-[#FF0000] border border-outline-variant" href="#">
+<i class="fa-brands fa-youtube text-base"></i>
+</a>
+</div>
+<!-- Hero Section -->
+<section class="relative h-[100svh] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero background" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8BQ8vt26QedeAzzk4dFCKfyKH3BIotWAenjEotM3ayDbCyL0E_Exq536e0zzA7Smu8wUe-J2F3SuIrGHdc-Cp_cHO23NtqWU8AOaNauXW9Mg4T8qv2t60r1tUXm9DhbxIjWH360bvK-iBXrckydoN5s2lMjJ88FcwEOy-ccNw1EIdwlUgpF94i1yDR8NiRCVAAVeZOqwVlsPUrzwsmvA8q0Uk_u0KdYAAUZBOB7oQoEexPbykJCgRA"/>
+</div>
+<div class="absolute inset-0 z-10 hero-overlay"></div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full flex flex-col items-center text-center mt-20">
+<div class="text-white max-w-3xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4 shadow-sm">2000 Bigha Premium Land</h1>
+<p class="font-headline-md text-headline-md mb-4 text-secondary-fixed">Investment Opportunity</p>
+<p class="font-body-lg text-body-lg opacity-90 mb-8 inline-block border-l-4 border-secondary-fixed pl-4 py-1 text-left">₹20 Lakhs/Bigha • Clear Title • Strategic Location</p>
+<div>
+<button onclick="document.getElementById('popup-form').classList.remove('hidden')" class="bg-secondary text-on-secondary font-label-caps text-label-caps py-4 px-12 rounded hover:bg-secondary-fixed transition-colors font-bold shadow-lg">REQUEST BROCHURE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Numbers -->
+<section class="py-16 bg-surface-container-lowest border-b border-outline-variant relative z-30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-outline-variant">
+<div class="py-4 md:py-0">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">2000</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">BIGHA TOTAL AREA</p>
+</div>
+<div class="py-4 md:py-0">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">₹20L</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PRICE PER BIGHA</p>
+</div>
+<div class="py-4 md:py-0">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">100%</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CLEAR TITLE &amp; DEMARCATED</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why This Property -->
+<section class="py-section-padding bg-surface" id="investment">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Strategic Advantage</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Positioned for exponential growth, Aurelian Estates offers unparalleled connectivity and infrastructure readiness for visionary investors.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-xl hover:scale-[1.02] transition-transform duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">route</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Strategic Location</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Adjacent to upcoming industrial corridors, ensuring high future valuation and commercial viability.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-xl hover:scale-[1.02] transition-transform duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">add_road</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Wide Road Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Direct access via 60ft wide arterial roads, facilitating heavy logistics and easy estate entry.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-xl hover:scale-[1.02] transition-transform duration-300 group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">factory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Industrial Ready</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Zoned for industrial and warehousing purposes, with preliminary clearances in process.</p>
+</div>
+</div>
+<div class="mt-16 w-full h-[500px] rounded-xl overflow-hidden relative">
+<img alt="Vast green landscape showing the scale of the land" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8BQ8vt26QedeAzzk4dFCKfyKH3BIotWAenjEotM3ayDbCyL0E_Exq536e0zzA7Smu8wUe-J2F3SuIrGHdc-Cp_cHO23NtqWU8AOaNauXW9Mg4T8qv2t60r1tUXm9DhbxIjWH360bvK-iBXrckydoN5s2lMjJ88FcwEOy-ccNw1EIdwlUgpF94i1yDR8NiRCVAAVeZOqwVlsPUrzwsmvA8q0Uk_u0KdYAAUZBOB7oQoEexPbykJCgRA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label-caps text-label-caps tracking-widest mb-2">AERIAL VIEW</p>
+<p class="font-headline-md text-headline-md">Vast Potential Unfolding</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-padding border-t border-outline-variant bg-surface-container-lowest dark:bg-inverse-surface">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<p class="font-headline-md text-headline-md text-primary mb-4">LUXE LAND</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100">© 2024 Premium Land Holdings. All Rights Reserved.</p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Investment Terms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Site Map</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+
+<!-- Popup Form -->
+<div id="popup-form" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('popup-form').classList.add('hidden')"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md px-4">
+        <div class="glass-panel p-8 rounded-xl w-full relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-secondary-container to-primary-container rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-white/95 backdrop-blur-md rounded-lg p-6">
+                <button onclick="document.getElementById('popup-form').classList.add('hidden')" class="absolute top-4 right-4 text-outline hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <h3 class="font-headline-md text-headline-md text-primary mb-6 text-center">Secure Your Allocation</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Full Name</label>
+                        <input class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="John Doe" type="text"/>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Phone Number</label>
+                        <input class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="+91 98765 43210" type="tel"/>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Investment Requirement</label>
+                        <select class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors">
+                            <option>10 - 50 Bigha</option>
+                            <option>50 - 100 Bigha</option>
+                            <option>100+ Bigha</option>
+                        </select>
+                    </div>
+                    <button class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps py-4 rounded hover:bg-secondary-fixed transition-colors mt-6 font-bold shadow-lg" type="button" onclick="document.getElementById('popup-form').classList.add('hidden')">SUBMIT REQUEST</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white');
+                nav.classList.remove('bg-surface/80');
+            } else {
+                nav.classList.remove('bg-white');
+                nav.classList.add('bg-surface/80');
+            }
+        });
+
+        // Mobile drawer navigation toggle
+        function toggleMobileDrawer(open) {
+            const drawer = document.getElementById('mobile-drawer');
+            if (open) {
+                drawer.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-y-hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-y-hidden');
+            }
+        }
+    </script>
+</body></html>
