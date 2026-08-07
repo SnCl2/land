@@ -622,10 +622,24 @@
                     container.classList.add('scale-100', 'opacity-100');
                 }, 50);
 
-                // Play video (muted to comply with browser autoplay policies)
-                video.play().catch(error => {
-                    console.log("Autoplay was prevented, waiting for user interaction:", error);
-                });
+                // Try playing unmuted first (if user clicked/interacted already)
+                video.muted = false;
+                video.play()
+                    .then(() => {
+                        // Success! Playing with sound. Hide the unmute button.
+                        const unmuteBtn = document.getElementById('popup-unmute-btn');
+                        if (unmuteBtn) {
+                            unmuteBtn.style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        // Blocked by browser autoplay policy. Fallback to muted autoplay.
+                        console.log("Unmuted autoplay blocked. Playing muted.");
+                        video.muted = true;
+                        video.play().catch(err => {
+                            console.log("Muted autoplay also failed:", err);
+                        });
+                    });
             }
         }, 5000); // 5 seconds delay
     });
@@ -673,7 +687,7 @@
         </button>
         <!-- Portrait video wrapper -->
         <div class="w-full rounded-2xl overflow-hidden bg-black relative shadow-inner" style="aspect-ratio: 9/16;">
-            <video id="popup-walkthrough-video" class="w-full h-full object-cover" loop muted playsinline controls>
+            <video id="popup-walkthrough-video" class="w-full h-full object-cover" loop playsinline controls>
                 <source src="assets/WhatsApp Video 2026-08-07 at 8.02.32 PM.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
