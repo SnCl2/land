@@ -668,6 +668,8 @@
         const unmuteBtn = document.getElementById('popup-unmute-btn');
         if (video) {
             video.muted = false;
+            video.volume = 1.0;
+            video.play().catch(err => console.log("Play failed on unmute:", err));
             if (unmuteBtn) {
                 unmuteBtn.style.display = 'none'; // Hide unmute button once clicked
             }
