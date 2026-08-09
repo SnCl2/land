@@ -1,0 +1,4 @@
+# Android project and APK builds
+android/
+*.apk
+AdhikshitaPlotters.apk
