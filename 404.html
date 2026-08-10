@@ -39,13 +39,32 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3MMTVHZGX"></script>
+<!-- Google tag (gtag.js) with Google Consent Mode -->
 <script>
+  // Initialize dataLayer
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  // Set default consent state based on previous storage preferences
+  if (localStorage.getItem('cookie-consent') === 'granted') {
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+  } else {
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3MMTVHZGX"></script>
+<script>
+  gtag('js', new Date());
   gtag('config', 'G-Y3MMTVHZGX');
 </script>
 </head>
@@ -106,5 +125,63 @@
         </div>
     </footer>
 
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md z-[120] bg-surface/95 backdrop-blur-md border border-gray-100 shadow-2xl p-6 rounded-2xl hidden transition-all duration-300 transform translate-y-4 opacity-0">
+    <div class="flex flex-col gap-4">
+        <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">cookie</span>
+            <div>
+                <h4 class="font-bold text-primary text-base">We Value Your Privacy</h4>
+                <p class="text-xs text-text-muted mt-1 leading-relaxed font-sans">
+                    We use cookies to analyze website traffic and personalize advertising. By clicking "Accept All", you consent to our use of cookies in accordance with Google Consent Mode.
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-end gap-3 text-xs font-semibold pt-2">
+            <button onclick="updateCookieConsent(false)" class="px-4 py-2 border border-gray-200 rounded text-text-main hover:bg-gray-50 transition-colors">
+                Decline
+            </button>
+            <button onclick="updateCookieConsent(true)" class="px-4 py-2 bg-primary hover:bg-primary-light text-white rounded transition-colors shadow">
+                Accept All
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.classList.remove('hidden');
+        setTimeout(() => {
+          banner.classList.remove('translate-y-4', 'opacity-0');
+        }, 100);
+      }
+    }
+  });
+
+  function updateCookieConsent(granted) {
+    const choice = granted ? 'granted' : 'denied';
+    localStorage.setItem('cookie-consent', choice);
+    
+    // Update consent state in Google Tag
+    gtag('consent', 'update', {
+      'ad_storage': choice,
+      'ad_user_data': choice,
+      'ad_personalization': choice,
+      'analytics_storage': choice
+    });
+
+    // Hide banner with animation
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      banner.classList.add('translate-y-4', 'opacity-0');
+      setTimeout(() => {
+        banner.classList.add('hidden');
+      }, 300);
+    }
+  }
+</script>
 </body>
 </html>
